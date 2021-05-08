@@ -26,8 +26,13 @@
                 <div class="col-lg-2 col-md-4 col-sm-6"><a href="{{ url_for('accessment_home') }}" target="_self" class="navigation">Assessment</a></div>
                 <div class="col-lg-2 col-md-4 col-sm-6"><a href="{{ url_for('table') }}" target="_self" class="navigation">Statistical results</a></div>
                 <div class="col-lg-4 col-md-4 col-sm-6">
-                <a href="{{ url_for('login') }}" class="login navigation" target="_self">Log in</a>
-                <a href="{{ url_for('register') }}" class="register navigation" target="_self">Register</a>
+                    {% if current_user.is_anonymous %}
+                    <a href="{{ url_for('login') }}" class="login navigation" target="_self">Login</a>
+                    {% else %}
+                    <a class="navigation"> Hi, {{ current_user.username }}! </a>
+                    <a href="{{ url_for('logout') }}" class="login navigation" target="_self">Logout</a>
+                    {% endif %}
+                    <a href="{{ url_for('register') }}" class="register navigation" target="_self">Register</a>
                 </div>
             </div>
         </div>   

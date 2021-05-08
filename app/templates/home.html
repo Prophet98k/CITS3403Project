@@ -25,7 +25,12 @@
                 <div class="col-lg-2 col-md-4 col-sm-6"><a href="{{ url_for('accessment_home') }}" target="_self" class="navigation">Assessment</a></div>
                 <div class="col-lg-2 col-md-4 col-sm-6"><a href="{{ url_for('table') }}" target="_self" class="navigation">Statistical results</a></div>
                 <div class="col-lg-4 col-md-4 col-sm-6">
-                    <a href="{{ url_for('login') }}" class="login navigation" target="_self">Log in</a>
+                    {% if current_user.is_anonymous %}
+                    <a href="{{ url_for('login') }}" class="login navigation" target="_self">Login</a>
+                    {% else %}
+                    <a class="navigation"> Hi, {{ current_user.username }}! </a>
+                    <a href="{{ url_for('logout') }}" class="login navigation" target="_self">Logout</a>
+                    {% endif %}
                     <a href="{{ url_for('register') }}" class="register navigation" target="_self">Register</a>
                 </div>
             </div>
@@ -40,17 +45,14 @@
        </p>
     </div>
     <div>
-        <p style="text-align: center;" class="introduction"> Introduction</p>
-    </div>
-    <div>
     <ol class ="anchor"> 
-        <li><a href="#first">1.0- What Is Japanese</a></li>
-        <li><a href="#second">2.0- History of Japanese</a>
+        <li><a href="#first">1.0 - What Is Japanese</a></li>
+        <li><a href="#second">2.0 - History of Japanese</a>
          <ul style="list-style: none;">
-             <li> 2.1-<a href="#second_first"> Old Janpanese</a></li>
-             <li> 2.2-<a href="#second_second"> Early Middle Janpanese</a></li>
-             <li> 2.3-<a href="#second_third"> Late Middle Japanese</a></li>
-             <li> 2.4-<a href="#second_fourth"> Morden Japanese</a></li>
+             <li>2.1-<a href="#second_first"> Old Janpanese</a></li>
+             <li>2.2-<a href="#second_second"> Early Middle Janpanese</a></li>
+             <li>2.3-<a href="#second_third"> Late Middle Japanese</a></li>
+             <li>2.4-<a href="#second_fourth"> Morden Japanese</a></li>
          </ul>       
         </li>
     </ol>
