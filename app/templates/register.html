@@ -27,7 +27,7 @@
             <div class="container" style= "width: 100%; height: 40px;">                                            
                 <div class="col-lg-2 col-md-4 col-sm-6"><a href="{{ url_for('home') }}" target="_self" class="navigation">Home</a></div>
                 <div class="col-lg-2 col-md-4 col-sm-6"><a href="{{ url_for('learn') }}" target="_self" class="navigation">Course</a></div>
-                <div class="col-lg-2 col-md-4 col-sm-6"><a href="{{ url_for('accessment_home') }}" target="_self" class="navigation">Assessment</a></div>
+                <div class="col-lg-2 col-md-4 col-sm-6"><a href="{{ url_for('assessment_home') }}" target="_self" class="navigation">Assessment</a></div>
                 <div class="col-lg-2 col-md-4 col-sm-6"><a href="{{ url_for('table') }}" target="_self" class="navigation">Statistical results</a></div>
                 <div class="col-lg-4 col-md-4 col-sm-6">
                 <a href="{{ url_for('login') }}" class="register navigation" target="_self">Log in</a>
@@ -41,26 +41,48 @@
                 <!-- <div class="login"><a href="login.html">Login</a></div> -->
             </h1>
             <div class="reg_form">
-                <form action ="" method="POST">
-                    <ul>
-                        <li><label for="Username">Username: </label> 
-                            <input type="text" class="inp" id="Username" required>
-                            <span></span>                            
-                        </li>
-                        <li><label for="Email">Email: </label> <input type="email" class="inp" id="Email"  required autofocus></li>
-                        <li><label for="pwd">Password: </label> 
-                            <input type="password" class="inp" id="pwd" required ></li>
-                        <li><label for="surepwd">Confirmed Password: </label> 
-                            <input type="password" class="inp" id="surepwd" required >
-                            <span></span>
-                        </li>                             
-                        <li class="agree"><input type="checkbox" name="queren" > 
-                            Agreement and registration <a href="#">《Know the user agreement》</a>                        
-                        </li>
-                        <li>
-                            <button type="submit" class="btn" onclick="select()">Create Your Account</button>
-                        </li>
-                    </ul>
+                <form action="" method="post">
+                    {{ form.hidden_tag() }}
+                    <p>
+                        {{ form.username.label }}<br>
+                        {{ form.username(size=32) }}<br>
+                        {% for error in form.username.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </p>
+                    <p>
+                        {{ form.email.label }}<br>
+                        {{ form.email(size=64) }}<br>
+                        {% for error in form.email.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </p>
+                    <p>
+                        {{ form.password.label }}<br>
+                        {{ form.password(size=32) }}<br>
+                        {% for error in form.password.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </p>
+                    <p>
+                        {{ form.password2.label }}<br>
+                        {{ form.password2(size=32) }}<br>
+                        {% for error in form.password2.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </p>
+                    <p>{{ form.submit() }}</p>
+                    <p>
+                        {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                        <ul class="alert alert-warning">
+                            {% for message in messages %}
+                              <li>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        {% endwith %}
+                    </p>
                 </form>
             </div>
         </div>

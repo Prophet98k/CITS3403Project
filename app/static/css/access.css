@@ -2,6 +2,11 @@
     color:red
 }
 
+body {
+    background-color: #fff;
+    background-image: url(../images/3.jpg);
+    
+}
 .h{
    height: 30px;
 }
