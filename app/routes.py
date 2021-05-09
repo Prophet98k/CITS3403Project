@@ -1,9 +1,8 @@
 from app import app
 from flask import render_template, flash, redirect, url_for
 from app.forms import LoginForm
-
-from flask_login import current_user, login_user
-from app.models import User
+from flask_login import current_user, login_user, login_required
+from app.models import User, Result
 from flask_login import logout_user
 from flask import request
 from werkzeug.urls import url_parse
@@ -65,13 +64,18 @@ def assessment():
     form = AnswerForm()
     if form.validate_on_submit():
         score,correct = getmark(form)
+        result = Result(user_id=current_user.get_id(),mark=score)
+        db.session.add(result)
+        db.session.commit()
         return redirect(url_for('feedback', score = score, correct = correct))
     return render_template("assessment.html", form=form)
 
 
 @app.route('/table')
+@login_required
 def table():
-    return render_template("table.html")
+    results = Result.query.filter_by(user_id=current_user.get_id()).all()
+    return render_template("table.html", results=results)
 
 @app.route('/logout')
 def logout():
