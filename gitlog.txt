@@ -1,0 +1,91 @@
+commit 61771e3664691507a3373e3acdfd0e74ae68d4f0
+Author: Prophet98k <814836297@qq.com>
+Date:   Sun May 9 15:59:16 2021 +0800
+
+    upload the requirements.txt
+
+commit 6c9e6213edd74ec291449bc56e4c4322a475891e
+Author: Prophet98k <814836297@qq.com>
+Date:   Sun May 9 15:56:40 2021 +0800
+
+    now the flask app can show user's marks
+
+commit e364caac6606e0fe351dec75ca3cbdab99b94514
+Author: Prophet98k <814836297@qq.com>
+Date:   Sun May 9 12:38:32 2021 +0800
+
+    question marking
+
+commit bc1571c8331b5724ea982984d499e855f9572dc3
+Author: Prophet98k <814836297@qq.com>
+Date:   Sat May 8 21:26:08 2021 +0800
+
+    origin html update
+
+commit 77e2532a9e42f19ed47c909202d5395bc9dfc75e
+Author: Prophet98k <814836297@qq.com>
+Date:   Sat May 8 18:10:49 2021 +0800
+
+    login can work
+
+commit 9be513741ee2acb2f81d9f8d07062ba1d647f85e
+Merge: bea96fd d318d14
+Author: Prophet98k <814836297@qq.com>
+Date:   Sat May 8 16:40:19 2021 +0800
+
+    Merge branch 'main' of https://github.com/Prophet98k/CITS3403Project
+    upload the origin htmls files
+
+commit d318d145b7fd0301af997675e12ad0a2ff724a7c
+Author: Prophet98k <50828933+Prophet98k@users.noreply.github.com>
+Date:   Sat May 8 16:26:51 2021 +0800
+
+    Update README.md
+
+commit bea96fd6fe636f638b98b8a378cfc46dde657265
+Author: Prophet98k <814836297@qq.com>
+Date:   Sat May 8 16:26:33 2021 +0800
+
+    The origin html files
+
+commit 9db48dc83b5164a216e9e28336e5ef45cb555c8f
+Author: Prophet98k <50828933+Prophet98k@users.noreply.github.com>
+Date:   Sat May 8 15:59:39 2021 +0800
+
+    Update README.md
+
+commit 81ded6a0dac6ce5bf660631c24b561b4731ac902
+Author: Prophet98k <50828933+Prophet98k@users.noreply.github.com>
+Date:   Sat May 8 15:59:28 2021 +0800
+
+    Update README.md
+
+commit 4f3aba3054c00aae23db2eae6891df647951407e
+Author: Prophet98k <50828933+Prophet98k@users.noreply.github.com>
+Date:   Sat May 8 15:56:06 2021 +0800
+
+    Create README.md
+
+commit b4f7070959c28c0364364cf57776d64144004dcb
+Author: Prophet98k <814836297@qq.com>
+Date:   Sat May 8 15:51:20 2021 +0800
+
+    22845648:    very first time flask finish
+
+commit e597a6b1005774983e4676c2c53cc2914a3b512d
+Author: Prophet98k <50828933+Prophet98k@users.noreply.github.com>
+Date:   Sat May 8 15:46:15 2021 +0800
+
+    Delete README.md
+
+commit 5b159b220b0a69a4d518d3ccf77000e1a7370802
+Author: Prophet98k <50828933+Prophet98k@users.noreply.github.com>
+Date:   Sat May 8 15:45:59 2021 +0800
+
+    Add files via upload
+
+commit e3014af89366265ae17fc346d000502ec4d52f0e
+Author: Prophet98k <50828933+Prophet98k@users.noreply.github.com>
+Date:   Sat May 8 15:26:37 2021 +0800
+
+    Initial commit
