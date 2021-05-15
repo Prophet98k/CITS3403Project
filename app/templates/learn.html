@@ -9,10 +9,10 @@
 	<title>Fifty tone diagram</title>	
 		<!-- jQuery + bootstrap -->
 	<script src="http://www.vvxue.com/common/js/jq+boot.js"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap-3.4.1-dist/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="../static/bootstrap-3.4.1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://foo.ibianma.com/jingying/word/2018/07/02/ec3bb52a00e176a7181d454dffaea219.css" media="screen" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css')}}">	
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/learn.css')}}">	
+    <link rel="stylesheet" href="../static/css/base.css">
+    <link rel="stylesheet" href="../static/css/learn.css">
 </head>
 
 <body id="main-body" >
@@ -20,20 +20,21 @@
         <div style="height: 10px;"></div>
         <div class="container mycheng" style="width: 100%;">
             <div class="container" style= "width: 100%; height: 40px;">
-            <div class="col-lg-2 col-md-4 col-sm-6"><a href="{{ url_for('home')}}" target="_self" class="navigation">Home</a></div>
-            <div class="col-lg-2 col-md-4 col-sm-6"><a href="{{ url_for('learn')}}" target="_self" class="navigation">Course</a></div>
-            <div class="col-lg-2 col-md-4 col-sm-6"><a href="{{ url_for('assessment_home')}}" target="_self" class="navigation">Assessment</a></div>
-            <div class="col-lg-2 col-md-4 col-sm-6"><a href="{{ url_for('table')}}" target="_self" class="navigation">Statistical results</a></div>
-            <div class="col-lg-4 col-md-4 col-sm-6">
-                {% if current_user.is_anonymous %}
-                <a href="{{ url_for('login') }}" class="login navigation" target="_self">Login</a>
-                {% else %}
-                <a class="navigation"> Hi, {{ current_user.username }}! </a>
-                <a href="{{ url_for('logout') }}" class="login navigation" target="_self">Logout</a>
-                {% endif %}
-                <a href="{{ url_for('register') }}" class="register navigation" target="_self">Register</a>
+                <div class="col-lg-2 col-md-4 col-sm-6"><a href="/home" target="_self" class="navigation">Home</a></div>
+                <div class="col-lg-2 col-md-4 col-sm-6"><a href="/learn" target="_self" class="navigation">Course</a></div>
+                <div class="col-lg-2 col-md-4 col-sm-6"><a href="/assessment_home" target="_self" class="navigation">Assessment</a></div>
+                <div class="col-lg-2 col-md-4 col-sm-6"><a href="/table" target="_self" class="navigation">Statistical results</a></div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    {% if current_user.is_anonymous %}
+                    <a href="/login" class="login navigation" target="_self">Login</a>
+                    {% else %}
+                    <a class="navigation"> Hi, {{ current_user.username }}! </a>
+                    <a href="/logout" class="login navigation" target="_self">Logout</a>
+                    {% endif %}
+                    <a href="/register" class="register navigation" target="_self">Register</a>
+                </div>
             </div>
-         </div>
+        </div>
     </header>	
 
 <div  class="container bgWrite">
@@ -41,7 +42,6 @@
         <a><p data-id="qingyin" class="wushiActive">Unvoiced Sound</p></a>
         <a><p data-id="zhuoyin" class="wushiNoActive">Voiced Sound</p></a>
         <a><p data-id="aoyin"  class="wushiNoActive">Difficult Tone</p></a>
-                    
     </div>
 </div>
 <div id="baseLList" class="container bgWrite mb-20 paddBottom30">

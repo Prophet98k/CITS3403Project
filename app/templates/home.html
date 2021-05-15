@@ -9,8 +9,8 @@
       <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap-3.4.1-dist/css/bootstrap.min.css') }}">>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="../static/bootstrap-3.4.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/home.css">
     <title>Home Page</title>
      <script src="{{ url_for('static', filename='bootstrap-3.4.1-dist/js/bootstrap.min.js') }}"></script>
 </head>
@@ -20,40 +20,40 @@
         <div style="height: 10px;"></div>
         <div class="container mycheng" style="width: 100%;">
             <div class="container" style= "width: 100%; height: 40px;">
-                <div class="col-lg-2 col-md-4 col-sm-6"><a href="{{ url_for('home') }}" target="_self" class="navigation">Home</a></div>
-                <div class="col-lg-2 col-md-4 col-sm-6"><a href="{{ url_for('learn') }}" target="_self" class="navigation">Course</a></div>
-                <div class="col-lg-2 col-md-4 col-sm-6"><a href="{{ url_for('assessment_home') }}" target="_self" class="navigation">Assessment</a></div>
-                <div class="col-lg-2 col-md-4 col-sm-6"><a href="{{ url_for('table') }}" target="_self" class="navigation">Statistical results</a></div>
+                <div class="col-lg-2 col-md-4 col-sm-6"><a href="/home" target="_self" class="navigation">Home</a></div>
+                <div class="col-lg-2 col-md-4 col-sm-6"><a href="/learn" target="_self" class="navigation">Course</a></div>
+                <div class="col-lg-2 col-md-4 col-sm-6"><a href="/assessment" target="_self" class="navigation">Assessment</a></div>
+                <div class="col-lg-2 col-md-4 col-sm-6"><a href="/table" target="_self" class="navigation">Statistical results</a></div>
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     {% if current_user.is_anonymous %}
-                    <a href="{{ url_for('login') }}" class="login navigation" target="_self">Login</a>
+                    <a href="/login" class="login navigation" target="_self">Login</a>
                     {% else %}
                     <a class="navigation"> Hi, {{ current_user.username }}! </a>
-                    <a href="{{ url_for('logout') }}" class="login navigation" target="_self">Logout</a>
+                    <a href="/logout" class="login navigation" target="_self">Logout</a>
                     {% endif %}
-                    <a href="{{ url_for('register') }}" class="register navigation" target="_self">Register</a>
+                    <a href="/register" class="register navigation" target="_self">Register</a>
                 </div>
             </div>
         </div>
     </header>
     <div style="width: 100%;">
         <p style="text-align: center;">
-        <img src="{{ url_for('static', filename='images/hujisan.jpeg') }}" width="300px" height="200px" alt="Japanese-hujisan" title="Japanese-hujisan">
-        <img src="{{ url_for('static', filename='images/Japan_temple.webp') }}" width="300px" height="200px" alt="Japanese Temple" title="Japanese-Temple" >
-        <img src="{{ url_for('static', filename='images/skytree.jpeg') }}" width="300px" height="200px" alt="Skytree" title = "Skytree">
-        <img src="{{ url_for('static', filename='images/Tokyo_Tower.jpg') }}" width="300px" height="200px" alt="TokyoTower" title = "TokyoTower">
+        <img src="../static/images/hujisan.jpeg" width="300px" height="200px" alt="Japanese-hujisan" title="Japanese-hujisan">
+        <img src="../static/images/Japan_temple.webp" width="300px" height="200px" alt="Japanese Temple" title="Japanese-Temple" >
+        <img src="../static/images/skytree.jpeg" width="300px" height="200px" alt="Skytree" title = "Skytree">
+        <img src="../static/images/Tokyo_Tower.jpg" width="300px" height="200px" alt="TokyoTower" title = "TokyoTower">
        </p>
     </div>
     <div>
-    <ol class ="anchor"> 
-        <li><a href="#first">1.0 - What Is Japanese</a></li>
-        <li><a href="#second">2.0 - History of Japanese</a>
+    <ol class ="anchor">
+        <li><a href="#first">  What Is Japanese</a></li>
+        <li><a href="#second">  History of Japanese</a>
          <ul style="list-style: none;">
              <li>2.1-<a href="#second_first"> Old Janpanese</a></li>
              <li>2.2-<a href="#second_second"> Early Middle Janpanese</a></li>
              <li>2.3-<a href="#second_third"> Late Middle Japanese</a></li>
              <li>2.4-<a href="#second_fourth"> Morden Japanese</a></li>
-         </ul>       
+         </ul>
         </li>
     </ol>
     </div>
@@ -72,7 +72,7 @@
     <div>
         <h3 style="text-align: center;" id="second">History of Japanese</h3>
         <div>
-            <a href="{{ url_for('static', filename='images/oldjapanese.jpeg') }}"><img src="{{ url_for('static', filename='images/oldjapanese.jpeg') }}" style="float: right; width: 320px;"></a>
+            <a href="../static/images/oldjapanese.jpeg"><img src="../static/images/oldjapanese.jpeg" style="float: right; width: 320px;"></a>
             <h4 class = "introduction"  id="second_first">Old Janpanese</h4>
         </div>
         <p class="introduction">Main article: Old Japanese
@@ -86,7 +86,7 @@
     </div>
     <div>
         <div>
-            <a href="{{ url_for('static', filename='images/earlyjapanese.jpg') }}"><img src="{{ url_for('static', filename='images/earlyjapanese.jpg') }}" style="float: right; width: 320px;"></a>
+            <a href="../static/images/earlyjapanese.jpg"><img src="../static/images/earlyjapanese.jpg" style="float: right; width: 320px;"></a>
             <h4 class = "introduction" id="second_second">Early Middle Janpanese</h4>
         </div>
         <p class="introduction">Main article: Early Middle Japanese
@@ -109,6 +109,17 @@
             <a href="#back">Back to top</a>
         </p>
     </div>
+
+     <h2>
+        <div>References</div>
+    </h2>
+    <div>Wikipedia(2021, May 14), Janpanese, <a href = "https://en.wikipedia.org/wiki/Japanese_language" target="_blank">https://en.wikipedia.org/wiki/Japanese_language</a> </div>
+    <p></p>
+    <div>U.S. DEPARTMENT of STATE, Japan,<a href="https://www.state.gov/countries-areas/japan/" target="_blank">https://www.state.gov/countries-areas/japan/</a></div>
+    <p></p>
+    <div>Mako trav, Best Live Japan Webcams, <a href="https://makotrav.com/best-japan-webcams/" target="_blank"> https://makotrav.com/best-japan-webcams/</a></div>
+    <p></p>
+    <div>gettyimages, Japan, <a href="https://www.gettyimages.hk/%E5%9C%96%E7%89%87/japan" target="_blank">https://www.gettyimages.hk/%E5%9C%96%E7%89%87/japan</a></div>
 
 </body>
 </html>
